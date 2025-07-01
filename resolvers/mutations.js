@@ -11,4 +11,12 @@ export const Mutation = {
     });
     return newBook;
   },
-}
+  addAuthor: async (_, { name }) => {
+    const newAuthor = await prisma.author.create({
+      data: {
+        name,
+      },
+    });
+    return newAuthor;
+  },
+};
